@@ -114,6 +114,9 @@
     // We want to create an action sheet which will allow users to choose how they add their contacts
     UIAlertController * view = [UIAlertController alertControllerWithTitle:[NSBundle t:bSearch] message:Nil preferredStyle:UIAlertControllerStyleActionSheet];
     
+    // Fix for iPad contacts load (Added by wazowski78 at 17/03/2017)
+    view.popoverPresentationController.barButtonItem = self.navigationItem.rightBarButtonItem;
+
 #ifdef ChatSDKContactBookModule
     UIAlertAction * phoneBook = [UIAlertAction actionWithTitle:[NSBundle t:bPhonebook]
                                                          style:UIAlertActionStyleDefault
